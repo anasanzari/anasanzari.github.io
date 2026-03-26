@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aneesa Haroon",
-  description: "Aneesa Haroon's portfolio",
+  title: "Anas Muhammed",
+  description: "Anas Muhammed — Founding Engineer & Senior Software Engineer",
 };
 
 export default function RootLayout({

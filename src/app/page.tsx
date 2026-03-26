@@ -1,20 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
 
 const staggerContainer = {
   animate: {
     transition: {
-      staggerChildren: 0.1
-    }
-  }
+      staggerChildren: 0.1,
+    },
+  },
 };
 
 const TypewriterText = ({ text }: { text: string }) => {
@@ -30,381 +23,476 @@ const TypewriterText = ({ text }: { text: string }) => {
   );
 };
 
+const skills = {
+  Languages: ["Golang", "TypeScript", "Node.js", "Java"],
+  "Frameworks": ["Gin", "NestJS", "Next.js", "React", "React Native", "Express"],
+  "Cloud & DevOps": ["AWS", "GCP", "Docker", "Kubernetes", "Terraform", "GitHub Actions"],
+  Databases: ["MySQL", "Postgres", "MongoDB", "Elasticsearch", "Cassandra", "Firestore"],
+};
+
+const experiences = [
+  {
+    title: "Founding Engineer",
+    company: "Checktrusty",
+    location: "Dubai",
+    period: "June 2025 — Present",
+    current: true,
+    bullets: [
+      "Owned the full technology stack end-to-end — product architecture, backend services, frontend, and cloud infrastructure",
+      "Pioneered an AI-first engineering culture, integrating LLMs and AI-native tooling to accelerate development",
+      "Designed and delivered an end-to-end booking service, forming the core transactional engine of the platform",
+      "Integrated VOIP and WhatsApp communication channels for real-time customer engagement",
+      "Provisioned production-grade infrastructure on AWS using Kubernetes and Terraform",
+    ],
+    tech: ["Golang", "TypeScript", "Next.js", "React", "MySQL", "AWS", "Kubernetes", "Terraform"],
+  },
+  {
+    title: "Senior Software Engineer",
+    company: "Tradeling",
+    location: "Dubai",
+    period: "Aug 2021 — June 2025",
+    bullets: [
+      "Led integration of payment providers including Amazon APS, Checkout.com, Tamara, Tabby, Apple Pay and Google Pay",
+      "Led integration of Al Etihad Credit Bureau (AECB) and credit insurance providers including Etihad Credit Insurance and Coface",
+      "Developed Tradeling Wallet — enabling refunds directly to wallet and apply to new purchases",
+      "Built automated refund workflows and internal credit application assessment system",
+    ],
+    tech: ["Node.js", "TypeScript", "NestJS", "Golang", "MongoDB", "Postgres", "React", "Next.js"],
+  },
+  {
+    title: "Senior Software Engineer",
+    company: "Tenderd",
+    location: "Dubai",
+    period: "Sep 2019 — July 2021",
+    bullets: [
+      "Led a team of 5, designing backend architecture and workflows",
+      "Architected the full stack for a fleet tracking and monitoring system, supporting 1,000+ connected devices",
+      "Developed the Fleet Manager mobile app with live bidding and logistics tracking",
+    ],
+    tech: ["Node.js", "MongoDB", "Firebase", "Socket.io", "React Native"],
+  },
+  {
+    title: "Software Engineer",
+    company: "SellerApp",
+    location: "Bangalore",
+    period: "May 2017 — Aug 2019",
+    bullets: [
+      "Designed and built high-performing, scalable microservices",
+      "Implemented CI/CD pipelines, mastered GCP and associated tooling",
+      "Led frontend engineering — defined application structure and adopted standard design patterns",
+      "Developed Chrome extensions with 50k+ downloads",
+    ],
+    tech: ["Go", "MySQL", "Elasticsearch", "Cassandra", "React", "Docker"],
+  },
+  {
+    title: "Summer Analyst",
+    company: "JP Morgan Chase",
+    location: "Mumbai",
+    period: "May — July 2016",
+    bullets: [
+      "Migrated an internal desktop application to web, designed application interfaces",
+      "Integrated RESTful services and created new APIs, followed TDD approach",
+    ],
+    tech: ["AngularJS", "Node.js", "Java", "Spring Boot"],
+  },
+];
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0a192f] text-[#64ffda] font-mono">
-      {/* Header/Hero Section */}
-      <motion.header 
+    <div className="min-h-screen bg-[#0a0a0f] text-[#64ffda] font-mono">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-[#1e1e2e]">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+          <span className="font-bold text-[#6366f1]">
+            anas.dev
+          </span>
+          <div className="hidden sm:flex gap-8">
+            {["Skills", "Experience", "Education", "Contact"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="text-sm text-[#71717a] hover:text-[#e4e4e7] transition-colors"
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <motion.header
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="container mx-auto px-4 py-20 md:py-32"
+        className="container mx-auto px-4 pt-32 pb-20 md:pt-40 md:pb-32"
       >
         <div className="max-w-3xl mx-auto">
-          <motion.div className="mb-4 text-[#8892b0] text-sm">
-            <TypewriterText text="$ whoami" />
-          </motion.div>
-          <motion.h1 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#ccd6f6] leading-tight"
+            className="mb-6"
           >
-            <span className="hidden sm:inline">{'>'} </span>
-            <span>Aneesa Haroon</span>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium bg-[#6366f1]/10 border border-[#6366f1]/20 text-[#6366f1]">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              Available for opportunities
+            </span>
+          </motion.div>
+          <motion.div className="mb-4 text-[#71717a] text-sm">
+            <TypewriterText text="$ whoami" />
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight"
+          >
+            <span className="text-[#e4e4e7]">Hi, I&apos;m </span>
+            <span className="text-[#6366f1]">
+              Anas Muhammed
+            </span>
           </motion.h1>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl sm:text-2xl md:text-3xl text-[#8892b0] mb-6"
+            className="text-xl sm:text-2xl text-[#71717a] mb-8"
           >
-            <span className="hidden sm:inline">{'>'} </span>
-            <span>Senior Software Engineer</span>
+            Founding Engineer & Senior Software Engineer
           </motion.h2>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-sm sm:text-base mb-8 leading-relaxed max-w-2xl text-[#8892b0]"
+            className="text-sm sm:text-base mb-10 leading-relaxed max-w-2xl text-[#a1a1aa]"
           >
             <TypewriterText text="$ cat about.txt" />
             <p className="mt-4">
-              A passionate software engineer with expertise in building scalable applications 
-              using microservices architecture and distributed computing. Specialized in 
-              Golang, TypeScript, and Node.js.
+              Building end-to-end products — from backend architecture and cloud
+              infrastructure to polished frontends. 9+ years shipping scalable
+              systems with Go, TypeScript, and Kubernetes. CKA certified.
             </p>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="mailto:aneesa.mharoon@gmail.com"
-              className="px-4 py-2 sm:px-6 sm:py-3 border border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda]/10 transition-colors rounded text-sm sm:text-base text-center"
+              href="#contact"
+              className="px-6 py-3 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-[#6366f1] to-[#22d3ee] shadow-lg shadow-[#6366f1]/30 hover:shadow-[#6366f1]/50 hover:-translate-y-0.5 transition-all text-center"
             >
-              {'>'} ./contact-me.sh
+              Get in touch →
             </a>
             <a
-              href="https://github.com/aneesaharoon"
+              href="https://github.com/anasanzari"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 sm:px-6 sm:py-3 border border-[#8892b0] text-[#8892b0] hover:bg-[#8892b0]/10 transition-colors rounded text-sm sm:text-base text-center"
+              className="px-6 py-3 rounded-xl font-semibold text-sm border border-[#1e1e2e] text-[#e4e4e7] hover:border-[#6366f1] hover:bg-[#6366f1]/10 transition-all text-center"
             >
-              {'>'} git clone profile
+              GitHub →
             </a>
           </motion.div>
         </div>
       </motion.header>
 
       {/* Skills Section */}
-      <motion.section 
+      <motion.section
+        id="skills"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-[#112240]"
+        className="py-20 bg-[#12121a]"
       >
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12 text-[#8892b0]"
+            className="mb-12"
           >
-            <TypewriterText text="$ neofetch --skills" />
+            <p className="text-xs tracking-widest uppercase text-[#6366f1] mb-3 font-mono">
+              // What I work with
+            </p>
+            <h2 className="text-3xl font-bold text-[#e4e4e7]">
+              Technical Skills
+            </h2>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto bg-[#0a192f] rounded-lg border border-[#233554] p-8"
+            className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5"
           >
-            <div className="flex flex-col md:flex-row gap-8">
-              {/* Terminal Window */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                className="flex-1 font-mono"
+            {Object.entries(skills).map(([category, items], catIdx) => (
+              <motion.div
+                key={category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: catIdx * 0.1 }}
+                className="p-6 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#6366f1]/30 hover:bg-[#1a1a26] hover:-translate-y-1 transition-all"
               >
-                <div className="mb-6 flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-                
-                <div className="space-y-4">
-                  <div>
-                    <span className="text-[#64ffda]">{'>'} Languages</span>
-                    <motion.div 
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: 0.2 }}
-                      className="ml-4 mt-2"
+                <h3 className="text-sm font-semibold text-[#e4e4e7] mb-4">
+                  {category}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {items.map((item) => (
+                    <span
+                      key={item}
+                      className="px-3 py-1 rounded-lg text-xs bg-[#6366f1]/8 text-[#a78bfa] border border-[#a78bfa]/12 font-mono"
                     >
-                      {["Go", "TypeScript", "Node.js", "Python"].map((lang, idx) => (
-                        <motion.div 
-                          key={lang}
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: idx * 0.1 }}
-                          className="flex items-center gap-2 text-[#8892b0]"
-                        >
-                          <span className="text-[#64ffda]">$</span> {lang}
-                          <motion.div 
-                            className="h-1 bg-[#64ffda]" 
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${(idx + 2) * 20}px` }}
-                            transition={{ duration: 1, delay: idx * 0.1 }}
-                          />
-                        </motion.div>
-                      ))}
-                    </motion.div>
-                  </div>
-
-                  <div>
-                    <span className="text-[#64ffda]">{'>'} Cloud & DevOps</span>
-                    <motion.div 
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: 0.4 }}
-                      className="ml-4 mt-2"
-                    >
-                      {["AWS", "GCP", "Docker", "Kubernetes"].map((tool, idx) => (
-                        <motion.div 
-                          key={tool}
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.4 + idx * 0.1 }}
-                          className="flex items-center gap-2 text-[#8892b0]"
-                        >
-                          <span className="text-[#64ffda]">$</span> {tool}
-                          <motion.div 
-                            className="h-1 bg-[#64ffda]" 
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${(idx + 2) * 20}px` }}
-                            transition={{ duration: 1, delay: 0.4 + idx * 0.1 }}
-                          />
-                        </motion.div>
-                      ))}
-                    </motion.div>
-                  </div>
-
-                  <div>
-                    <span className="text-[#64ffda]">{'>'} Databases</span>
-                    <motion.div 
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: 0.6 }}
-                      className="ml-4 mt-2"
-                    >
-                      {["PostgreSQL", "MongoDB", "Redis", "Firestore"].map((db, idx) => (
-                        <motion.div 
-                          key={db}
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.6 + idx * 0.1 }}
-                          className="flex items-center gap-2 text-[#8892b0]"
-                        >
-                          <span className="text-[#64ffda]">$</span> {db}
-                          <motion.div 
-                            className="h-1 bg-[#64ffda]" 
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${(idx + 2) * 20}px` }}
-                            transition={{ duration: 1, delay: 0.6 + idx * 0.1 }}
-                          />
-                        </motion.div>
-                      ))}
-                    </motion.div>
-                  </div>
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </motion.div>
+            ))}
+          </motion.div>
 
-              {/* ASCII Art Section */}
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                className="hidden md:block w-64 text-[#64ffda] font-mono whitespace-pre"
-              >
-                {`
-   ____  _    _ _ _     
-  / ___|| | _(_) | |___ 
-  \\___ \\| |/ / | | / __|
-   ___) |   <| | | \\__ \\
-  |____/|_|\\_\\_|_|_|___/
-                `}
-              </motion.div>
+          {/* Certification */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto mt-8"
+          >
+            <div className="inline-flex items-center gap-4 p-5 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#6366f1]/30 transition-all">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#6366f1]/15 to-[#22d3ee]/15 flex items-center justify-center text-2xl">
+                ☸️
+              </div>
+              <div>
+                <h3 className="font-semibold text-[#e4e4e7] text-sm">
+                  Certified Kubernetes Administrator
+                </h3>
+                <p className="text-xs text-[#71717a]">CNCF</p>
+              </div>
             </div>
           </motion.div>
         </div>
       </motion.section>
 
       {/* Experience Section */}
-      <section className="container mx-auto px-4 py-16">
+      <section id="experience" className="container mx-auto px-4 py-20">
         <div className="max-w-3xl mx-auto">
-          <div className="mb-8 text-[#8892b0]">
-            <TypewriterText text="$ cat ./experience/timeline.md" />
-          </div>
-          <div className="space-y-8">
-            <div className="p-6 bg-[#112240] rounded-lg border border-[#233554] hover:border-[#64ffda] transition-colors">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-[#ccd6f6]">Freelance Software Engineer</h3>
-                <p className="text-[#8892b0]">2024 - Present</p>
-              </div>
-              <p className="text-[#8892b0] mb-4">
-                <a href="https://www.upwork.com" target="_blank" rel="noopener noreferrer"
-                  className="hover:text-[#64ffda] transition-colors">
-                  Upwork
-                </a> • Remote
-              </p>
-              <ul className="space-y-2 text-[#8892b0]">
-                <li>• Developed and maintained web applications for international clients</li>
-                <li>• Specialized in building scalable backend services using Go and Node.js</li>
-                <li>• Implemented microservices architectures and distributed systems</li>
-                <li>• Maintained high client satisfaction with excellent communication</li>
-              </ul>
-              <div className="mt-4 pt-4 border-t border-[#233554]">
-                <p className="text-[#64ffda] text-sm mb-2">$ Technologies Used:</p>
-                <div className="flex flex-wrap gap-2">
-                  {["Go", "Node.js", "TypeScript", "Firebase", "AWS", "GCP"].map((tech) => (
-                    <span key={tech} className="text-xs px-2 py-1 rounded-full border border-[#64ffda] text-[#64ffda]">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <p className="text-xs tracking-widest uppercase text-[#6366f1] mb-3 font-mono">
+              // Where I&apos;ve worked
+            </p>
+            <h2 className="text-3xl font-bold text-[#e4e4e7]">Experience</h2>
+          </motion.div>
 
-            <div className="p-6 bg-[#112240] rounded-lg border border-[#233554] hover:border-[#64ffda] transition-colors">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-[#ccd6f6]">Senior Software Engineer</h3>
-                <p className="text-[#8892b0]">Jan 2024 - Present</p>
-              </div>
-              <p className="text-[#8892b0] mb-4">
-                <a href="https://www.bellbytes.com" target="_blank" rel="noopener noreferrer"
-                  className="hover:text-[#64ffda] transition-colors">
-                  Bellbytes
-                </a> • Remote
-              </p>
-              <ul className="space-y-2 text-[#8892b0]">
-                <li>• Lead developer in user authentication and payments team</li>
-                <li>• Implemented secure authentication systems and payment integrations</li>
-                <li>• Developed scalable microservices architecture</li>
-              </ul>
-              <div className="mt-4 pt-4 border-t border-[#233554]">
-                <p className="text-[#64ffda] text-sm mb-2">$ Technologies Used:</p>
-                <div className="flex flex-wrap gap-2">
-                  {["Go", "PostgreSQL", "Firestore", "Redis", "Docker", "Kubernetes", "GCP", "Stripe" ].map((tech) => (
-                    <span key={tech} className="text-xs px-2 py-1 rounded-full border border-[#64ffda] text-[#64ffda]">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+          {/* Timeline */}
+          <div className="relative">
+            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#6366f1] via-[#22d3ee] to-transparent rounded-full" />
 
-            <div className="p-6 bg-[#112240] rounded-lg border border-[#233554] hover:border-[#64ffda] transition-colors">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-[#ccd6f6]">Software Engineer</h3>
-                <p className="text-[#8892b0]">Jun 2021 - Dec 2023</p>
-              </div>
-              <p className="text-[#8892b0] mb-4">
-                <a href="https://www.elucidata.io" target="_blank" rel="noopener noreferrer"
-                  className="hover:text-[#64ffda] transition-colors">
-                  Elucidata
-                </a> • Remote
-              </p>
-              <ul className="space-y-2 text-[#8892b0]">
-                <li>• Worked on AI platform for biomedical data science teams</li>
-                <li>• Core member of the data curation team</li>
-                <li>• Built systems to process and manage large-scale biomedical datasets</li>
-                <li>• Implemented distributed computing solutions for data processing</li>
-              </ul>
-              <div className="mt-4 pt-4 border-t border-[#233554]">
-                <p className="text-[#64ffda] text-sm mb-2">$ Technologies Used:</p>
-                <div className="flex flex-wrap gap-2">
-                  {["Node.js", "TypeScript", "Python", "Jupyter", "AWS S3", "Docker", "AWS"].map((tech) => (
-                    <span key={tech} className="text-xs px-2 py-1 rounded-full border border-[#64ffda] text-[#64ffda]">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="p-6 bg-[#112240] rounded-lg border border-[#233554] hover:border-[#64ffda] transition-colors">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-[#ccd6f6]">Tutor</h3>
-                <p className="text-[#8892b0]">Jun 2017 - Jul 2019</p>
-              </div>
-              <p className="text-[#8892b0] mb-4">
-                <a 
-                  href="https://www.time4education.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-[#64ffda] transition-colors"
+            <div className="space-y-10">
+              {experiences.map((exp, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05 }}
+                  className="relative pl-10"
                 >
-                  Triumphant Institute of Management and Education
-                </a> • Bangalore, India
-              </p>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                <li>• Taught Biology for grades 11 and 12</li>
-                <li>• Prepared students for higher secondary examinations</li>
-              </ul>
+                  <div
+                    className={`absolute left-[-5px] top-1.5 w-3 h-3 rounded-full border-2 ${
+                      exp.current
+                        ? "bg-green-500 border-green-500 shadow-[0_0_0_4px_#0a0a0f,0_0_0_6px_#22c55e] animate-pulse"
+                        : "bg-[#6366f1] border-[#6366f1] shadow-[0_0_0_4px_#0a0a0f,0_0_0_6px_#6366f1]"
+                    }`}
+                  />
+                  <span className="text-xs text-[#22d3ee] font-mono mb-2 block">
+                    {exp.period}
+                  </span>
+                  <div className="p-6 rounded-2xl bg-[#12121a] border border-[#1e1e2e] hover:border-[#6366f1]/20 transition-all">
+                    <h3 className="text-lg font-semibold text-[#e4e4e7]">
+                      {exp.title}
+                    </h3>
+                    <p className="text-[#6366f1] text-sm font-medium mb-3">
+                      {exp.company} · {exp.location}
+                    </p>
+                    <ul className="space-y-2">
+                      {exp.bullets.map((bullet, bIdx) => (
+                        <li
+                          key={bIdx}
+                          className="text-[#a1a1aa] text-sm pl-5 relative"
+                        >
+                          <span className="absolute left-0 text-[#6366f1]">
+                            ▹
+                          </span>
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-[#1e1e2e]">
+                      {exp.tech.map((t) => (
+                        <span
+                          key={t}
+                          className="px-2.5 py-0.5 rounded-md text-[0.7rem] bg-[#22d3ee]/8 text-[#22d3ee] border border-[#22d3ee]/12 font-mono"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Education Section - Now third */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
-          <div className="space-y-6">
-            <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-              <h3 className="text-xl font-semibold mb-2">Master of Technology in Biotechnology</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Indian Institute of Technology, Madras
+      {/* Education Section */}
+      <section id="education" className="py-20 bg-[#12121a]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <p className="text-xs tracking-widest uppercase text-[#6366f1] mb-3 font-mono">
+                // Background
               </p>
-              <p className="text-gray-600 dark:text-gray-400">2019 - 2021</p>
-            </div>
-            
-            <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-              <h3 className="text-xl font-semibold mb-2">Bachelor of Technology in Biotechnology</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                National Institute of Technology, Calicut
-              </p>
-              <p className="text-gray-600 dark:text-gray-400">2013 - 2017</p>
+              <h2 className="text-3xl font-bold text-[#e4e4e7]">Education</h2>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#6366f1]/20 hover:-translate-y-1 transition-all"
+              >
+                <h3 className="font-semibold text-[#e4e4e7]">
+                  Bachelor of Technology
+                </h3>
+                <p className="text-[#22d3ee] text-sm mt-1">
+                  National Institute of Technology Calicut
+                </p>
+                <p className="text-[#71717a] text-xs font-mono mt-1">
+                  2013 — 2017
+                </p>
+                <p className="text-[#a78bfa] text-sm mt-2">
+                  Computer Science & Engineering · GPA: 8.84
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="p-6 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#6366f1]/20 hover:-translate-y-1 transition-all"
+              >
+                <h3 className="font-semibold text-[#e4e4e7]">
+                  Higher Secondary School
+                </h3>
+                <p className="text-[#22d3ee] text-sm mt-1">
+                  TD Higher Secondary School, Alappuzha
+                </p>
+                <p className="text-[#71717a] text-xs font-mono mt-1">
+                  2011 — 2013
+                </p>
+                <p className="text-[#a78bfa] text-sm mt-2">12th — 97.4%</p>
+              </motion.div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="container mx-auto px-4 py-20">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <p className="text-xs tracking-widest uppercase text-[#6366f1] mb-3 font-mono">
+              // Let&apos;s connect
+            </p>
+            <h2 className="text-3xl font-bold text-[#e4e4e7]">Get In Touch</h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4"
+          >
+            <a
+              href="mailto:anasanzari@gmail.com"
+              className="flex items-center gap-4 p-5 rounded-2xl bg-[#12121a] border border-[#1e1e2e] hover:border-[#6366f1]/30 hover:bg-[#1a1a26] hover:-translate-y-1 transition-all"
+            >
+              <div className="w-10 h-10 rounded-xl bg-[#6366f1]/10 flex items-center justify-center text-lg">
+                ✉️
+              </div>
+              <div>
+                <p className="text-[#71717a] text-xs">Email</p>
+                <p className="text-[#e4e4e7] text-sm font-medium">
+                  anasanzari@gmail.com
+                </p>
+              </div>
+            </a>
+            <a
+              href="tel:+971508547352"
+              className="flex items-center gap-4 p-5 rounded-2xl bg-[#12121a] border border-[#1e1e2e] hover:border-[#6366f1]/30 hover:bg-[#1a1a26] hover:-translate-y-1 transition-all"
+            >
+              <div className="w-10 h-10 rounded-xl bg-[#6366f1]/10 flex items-center justify-center text-lg">
+                📱
+              </div>
+              <div>
+                <p className="text-[#71717a] text-xs">Phone</p>
+                <p className="text-[#e4e4e7] text-sm font-medium">
+                  (+971) 508547352
+                </p>
+              </div>
+            </a>
+            <a
+              href="https://github.com/anasanzari"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-5 rounded-2xl bg-[#12121a] border border-[#1e1e2e] hover:border-[#6366f1]/30 hover:bg-[#1a1a26] hover:-translate-y-1 transition-all"
+            >
+              <div className="w-10 h-10 rounded-xl bg-[#6366f1]/10 flex items-center justify-center">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="#e4e4e7"
+                >
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-[#71717a] text-xs">GitHub</p>
+                <p className="text-[#e4e4e7] text-sm font-medium">
+                  anasanzari
+                </p>
+              </div>
+            </a>
+          </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-50 dark:bg-gray-800 py-8">
+      <footer className="border-t border-[#1e1e2e] py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-600 dark:text-gray-400">
-            © {new Date().getFullYear()} Aneesa Haroon. All rights reserved.
+          <p className="text-[#71717a] text-sm">
+            &copy; {new Date().getFullYear()} Anas Muhammed. Built with purpose.
           </p>
-          <div className="flex justify-center gap-4 mt-4">
-            <a
-              href="mailto:aneesa.mharoon@gmail.com"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-            >
-              Email
-            </a>
-            <a
-              href="https://github.com/aneesaharoon"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-            >
-              GitHub
-            </a>
-          </div>
         </div>
       </footer>
     </div>
