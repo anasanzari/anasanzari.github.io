@@ -34,6 +34,7 @@ const experiences = [
   {
     title: "Founding Engineer",
     company: "Checktrusty",
+    url: "https://www.checktrusty.com",
     location: "Dubai",
     period: "June 2025 — Present",
     current: true,
@@ -49,6 +50,7 @@ const experiences = [
   {
     title: "Senior Software Engineer",
     company: "Tradeling",
+    url: "https://www.tradeling.com",
     location: "Dubai",
     period: "Aug 2021 — June 2025",
     bullets: [
@@ -62,6 +64,7 @@ const experiences = [
   {
     title: "Senior Software Engineer",
     company: "Tenderd",
+    url: "https://www.tenderd.com",
     location: "Dubai",
     period: "Sep 2019 — July 2021",
     bullets: [
@@ -74,6 +77,7 @@ const experiences = [
   {
     title: "Software Engineer",
     company: "SellerApp",
+    url: "https://www.sellerapp.com",
     location: "Bangalore",
     period: "May 2017 — Aug 2019",
     bullets: [
@@ -87,6 +91,7 @@ const experiences = [
   {
     title: "Summer Analyst",
     company: "JP Morgan Chase",
+    url: "https://www.jpmorgan.com",
     location: "Mumbai",
     period: "May — July 2016",
     bullets: [
@@ -104,7 +109,6 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-[#1e1e2e]">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <span className="font-bold text-[#6366f1]">
-            anas.dev
           </span>
           <div className="hidden sm:flex gap-8">
             {["Skills", "Experience", "Education", "Contact"].map((item) => (
@@ -128,7 +132,7 @@ export default function Home() {
         className="container mx-auto px-4 pt-32 pb-20 md:pt-40 md:pb-32"
       >
         <div className="max-w-3xl mx-auto">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="mb-6"
@@ -137,7 +141,7 @@ export default function Home() {
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               Available for opportunities
             </span>
-          </motion.div>
+          </motion.div> */}
           <motion.div className="mb-4 text-[#71717a] text-sm">
             <TypewriterText text="$ whoami" />
           </motion.div>
@@ -180,7 +184,7 @@ export default function Home() {
           >
             <a
               href="#contact"
-              className="px-6 py-3 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-[#6366f1] to-[#22d3ee] shadow-lg shadow-[#6366f1]/30 hover:shadow-[#6366f1]/50 hover:-translate-y-0.5 transition-all text-center"
+              className="px-6 py-3 rounded-xl font-semibold text-sm text-white bg-[#6366f1] shadow-lg shadow-[#6366f1]/30 hover:shadow-[#6366f1]/50 hover:-translate-y-0.5 transition-all text-center"
             >
               Get in touch →
             </a>
@@ -206,6 +210,7 @@ export default function Home() {
         className="py-20 bg-[#12121a]"
       >
         <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -219,6 +224,7 @@ export default function Home() {
               Technical Skills
             </h2>
           </motion.div>
+          </div>
 
           <motion.div
             variants={staggerContainer}
@@ -261,7 +267,7 @@ export default function Home() {
             className="max-w-4xl mx-auto mt-8"
           >
             <div className="inline-flex items-center gap-4 p-5 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#6366f1]/30 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#6366f1]/15 to-[#22d3ee]/15 flex items-center justify-center text-2xl">
+              <div className="w-12 h-12 rounded-xl bg-[#6366f1]/15 flex items-center justify-center text-2xl">
                 ☸️
               </div>
               <div>
@@ -292,7 +298,7 @@ export default function Home() {
 
           {/* Timeline */}
           <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#6366f1] via-[#22d3ee] to-transparent rounded-full" />
+            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#6366f1]/40 rounded-full" />
 
             <div className="space-y-10">
               {experiences.map((exp, idx) => (
@@ -305,11 +311,10 @@ export default function Home() {
                   className="relative pl-10"
                 >
                   <div
-                    className={`absolute left-[-5px] top-1.5 w-3 h-3 rounded-full border-2 ${
-                      exp.current
-                        ? "bg-green-500 border-green-500 shadow-[0_0_0_4px_#0a0a0f,0_0_0_6px_#22c55e] animate-pulse"
-                        : "bg-[#6366f1] border-[#6366f1] shadow-[0_0_0_4px_#0a0a0f,0_0_0_6px_#6366f1]"
-                    }`}
+                    className={`absolute left-[-5px] top-1.5 w-3 h-3 rounded-full border-2 ${exp.current
+                      ? "bg-green-500 border-green-500 shadow-[0_0_0_4px_#0a0a0f,0_0_0_6px_#22c55e] animate-pulse"
+                      : "bg-[#6366f1] border-[#6366f1] shadow-[0_0_0_4px_#0a0a0f,0_0_0_6px_#6366f1]"
+                      }`}
                   />
                   <span className="text-xs text-[#22d3ee] font-mono mb-2 block">
                     {exp.period}
@@ -318,8 +323,16 @@ export default function Home() {
                     <h3 className="text-lg font-semibold text-[#e4e4e7]">
                       {exp.title}
                     </h3>
-                    <p className="text-[#6366f1] text-sm font-medium mb-3">
-                      {exp.company} · {exp.location}
+                    <p className="text-sm font-medium mb-3">
+                      <a
+                        href={exp.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#6366f1] hover:text-[#22d3ee] transition-colors"
+                      >
+                        {exp.company}
+                      </a>
+                      <span className="text-[#71717a]"> · {exp.location}</span>
                     </p>
                     <ul className="space-y-2">
                       {exp.bullets.map((bullet, bIdx) => (
@@ -430,7 +443,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
             <a
               href="mailto:anasanzari@gmail.com"
@@ -443,20 +456,6 @@ export default function Home() {
                 <p className="text-[#71717a] text-xs">Email</p>
                 <p className="text-[#e4e4e7] text-sm font-medium">
                   anasanzari@gmail.com
-                </p>
-              </div>
-            </a>
-            <a
-              href="tel:+971508547352"
-              className="flex items-center gap-4 p-5 rounded-2xl bg-[#12121a] border border-[#1e1e2e] hover:border-[#6366f1]/30 hover:bg-[#1a1a26] hover:-translate-y-1 transition-all"
-            >
-              <div className="w-10 h-10 rounded-xl bg-[#6366f1]/10 flex items-center justify-center text-lg">
-                📱
-              </div>
-              <div>
-                <p className="text-[#71717a] text-xs">Phone</p>
-                <p className="text-[#e4e4e7] text-sm font-medium">
-                  (+971) 508547352
                 </p>
               </div>
             </a>
