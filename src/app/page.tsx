@@ -108,7 +108,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-[#1e1e2e]">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <span className="font-bold text-[#6366f1]">
+          <span className="font-bold text-[#64ffda]">
           </span>
           <div className="hidden sm:flex gap-8">
             {["Skills", "Experience", "Education", "Contact"].map((item) => (
@@ -137,8 +137,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             className="mb-6"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium bg-[#6366f1]/10 border border-[#6366f1]/20 text-[#6366f1]">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium bg-[#64ffda]/10 border border-[#64ffda]/20 text-[#64ffda]">
+              <span className="w-2 h-2 rounded-full bg-[#64ffda] animate-pulse" />
               Available for opportunities
             </span>
           </motion.div> */}
@@ -151,7 +151,7 @@ export default function Home() {
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight"
           >
             <span className="text-[#e4e4e7]">Hi, I&apos;m </span>
-            <span className="text-[#6366f1]">
+            <span className="text-[#64ffda]">
               Anas Muhammed
             </span>
           </motion.h1>
@@ -184,7 +184,7 @@ export default function Home() {
           >
             <a
               href="#contact"
-              className="px-6 py-3 rounded-xl font-semibold text-sm text-white bg-[#6366f1] shadow-lg shadow-[#6366f1]/30 hover:shadow-[#6366f1]/50 hover:-translate-y-0.5 transition-all text-center"
+              className="px-6 py-3 rounded-xl font-semibold text-sm text-[#0a0a0f] bg-[#64ffda] shadow-lg shadow-[#64ffda]/30 hover:shadow-[#64ffda]/50 hover:-translate-y-0.5 transition-all text-center"
             >
               Get in touch →
             </a>
@@ -192,7 +192,7 @@ export default function Home() {
               href="https://github.com/anasanzari"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl font-semibold text-sm border border-[#1e1e2e] text-[#e4e4e7] hover:border-[#6366f1] hover:bg-[#6366f1]/10 transition-all text-center"
+              className="px-6 py-3 rounded-xl font-semibold text-sm border border-[#1e1e2e] text-[#e4e4e7] hover:border-[#64ffda] hover:bg-[#64ffda]/10 transition-all text-center"
             >
               GitHub →
             </a>
@@ -217,7 +217,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <p className="text-xs tracking-widest uppercase text-[#6366f1] mb-3 font-mono">
+            <p className="text-xs tracking-widest uppercase text-[#64ffda] mb-3 font-mono">
               // What I work with
             </p>
             <h2 className="text-3xl font-bold text-[#e4e4e7]">
@@ -240,7 +240,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: catIdx * 0.1 }}
-                className="p-6 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#6366f1]/30 hover:bg-[#1a1a26] hover:-translate-y-1 transition-all"
+                className="p-6 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#64ffda]/30 hover:bg-[#1a1a26] hover:-translate-y-1 transition-all"
               >
                 <h3 className="text-sm font-semibold text-[#e4e4e7] mb-4">
                   {category}
@@ -249,7 +249,7 @@ export default function Home() {
                   {items.map((item) => (
                     <span
                       key={item}
-                      className="px-3 py-1 rounded-lg text-xs bg-[#6366f1]/8 text-[#a78bfa] border border-[#a78bfa]/12 font-mono"
+                      className="px-3 py-1 rounded-lg text-xs bg-[#64ffda]/8 text-[#8892b0] border border-[#8892b0]/12 font-mono"
                     >
                       {item}
                     </span>
@@ -266,8 +266,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto mt-8"
           >
-            <div className="inline-flex items-center gap-4 p-5 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#6366f1]/30 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-[#6366f1]/15 flex items-center justify-center text-2xl">
+            <div className="inline-flex items-center gap-4 p-5 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#64ffda]/30 transition-all">
+              <div className="w-12 h-12 rounded-xl bg-[#64ffda]/15 flex items-center justify-center text-2xl">
                 ☸️
               </div>
               <div>
@@ -290,7 +290,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <p className="text-xs tracking-widest uppercase text-[#6366f1] mb-3 font-mono">
+            <p className="text-xs tracking-widest uppercase text-[#64ffda] mb-3 font-mono">
               // Where I&apos;ve worked
             </p>
             <h2 className="text-3xl font-bold text-[#e4e4e7]">Experience</h2>
@@ -298,7 +298,7 @@ export default function Home() {
 
           {/* Timeline */}
           <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#6366f1]/40 rounded-full" />
+            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#64ffda]/40 rounded-full" />
 
             <div className="space-y-10">
               {experiences.map((exp, idx) => (
@@ -312,14 +312,14 @@ export default function Home() {
                 >
                   <div
                     className={`absolute left-[-5px] top-1.5 w-3 h-3 rounded-full border-2 ${exp.current
-                      ? "bg-green-500 border-green-500 shadow-[0_0_0_4px_#0a0a0f,0_0_0_6px_#22c55e] animate-pulse"
-                      : "bg-[#6366f1] border-[#6366f1] shadow-[0_0_0_4px_#0a0a0f,0_0_0_6px_#6366f1]"
+                      ? "bg-[#64ffda] border-[#64ffda] shadow-[0_0_0_4px_#0a0a0f,0_0_0_6px_#64ffda] animate-pulse"
+                      : "bg-[#64ffda]/50 border-[#64ffda]/50 shadow-[0_0_0_4px_#0a0a0f,0_0_0_6px_rgba(100,255,218,0.3)]"
                       }`}
                   />
-                  <span className="text-xs text-[#22d3ee] font-mono mb-2 block">
+                  <span className="text-xs text-[#64ffda] font-mono mb-2 block">
                     {exp.period}
                   </span>
-                  <div className="p-6 rounded-2xl bg-[#12121a] border border-[#1e1e2e] hover:border-[#6366f1]/20 transition-all">
+                  <div className="p-6 rounded-2xl bg-[#12121a] border border-[#1e1e2e] hover:border-[#64ffda]/20 transition-all">
                     <h3 className="text-lg font-semibold text-[#e4e4e7]">
                       {exp.title}
                     </h3>
@@ -328,7 +328,7 @@ export default function Home() {
                         href={exp.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#6366f1] hover:text-[#22d3ee] transition-colors"
+                        className="text-[#64ffda] hover:brightness-125 transition-all"
                       >
                         {exp.company}
                       </a>
@@ -340,7 +340,7 @@ export default function Home() {
                           key={bIdx}
                           className="text-[#a1a1aa] text-sm pl-5 relative"
                         >
-                          <span className="absolute left-0 text-[#6366f1]">
+                          <span className="absolute left-0 text-[#64ffda]">
                             ▹
                           </span>
                           {bullet}
@@ -351,7 +351,7 @@ export default function Home() {
                       {exp.tech.map((t) => (
                         <span
                           key={t}
-                          className="px-2.5 py-0.5 rounded-md text-[0.7rem] bg-[#22d3ee]/8 text-[#22d3ee] border border-[#22d3ee]/12 font-mono"
+                          className="px-2.5 py-0.5 rounded-md text-[0.7rem] bg-[#64ffda]/8 text-[#64ffda] border border-[#64ffda]/12 font-mono"
                         >
                           {t}
                         </span>
@@ -375,7 +375,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <p className="text-xs tracking-widest uppercase text-[#6366f1] mb-3 font-mono">
+              <p className="text-xs tracking-widest uppercase text-[#64ffda] mb-3 font-mono">
                 // Background
               </p>
               <h2 className="text-3xl font-bold text-[#e4e4e7]">Education</h2>
@@ -386,18 +386,18 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#6366f1]/20 hover:-translate-y-1 transition-all"
+                className="p-6 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#64ffda]/20 hover:-translate-y-1 transition-all"
               >
                 <h3 className="font-semibold text-[#e4e4e7]">
                   Bachelor of Technology
                 </h3>
-                <p className="text-[#22d3ee] text-sm mt-1">
+                <p className="text-[#64ffda] text-sm mt-1">
                   National Institute of Technology Calicut
                 </p>
                 <p className="text-[#71717a] text-xs font-mono mt-1">
                   2013 — 2017
                 </p>
-                <p className="text-[#a78bfa] text-sm mt-2">
+                <p className="text-[#8892b0] text-sm mt-2">
                   Computer Science & Engineering · GPA: 8.84
                 </p>
               </motion.div>
@@ -406,18 +406,18 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#6366f1]/20 hover:-translate-y-1 transition-all"
+                className="p-6 rounded-2xl bg-[#0a0a0f] border border-[#1e1e2e] hover:border-[#64ffda]/20 hover:-translate-y-1 transition-all"
               >
                 <h3 className="font-semibold text-[#e4e4e7]">
                   Higher Secondary School
                 </h3>
-                <p className="text-[#22d3ee] text-sm mt-1">
+                <p className="text-[#64ffda] text-sm mt-1">
                   TD Higher Secondary School, Alappuzha
                 </p>
                 <p className="text-[#71717a] text-xs font-mono mt-1">
                   2011 — 2013
                 </p>
-                <p className="text-[#a78bfa] text-sm mt-2">12th — 97.4%</p>
+                <p className="text-[#8892b0] text-sm mt-2">12th — 97.4%</p>
               </motion.div>
             </div>
           </div>
@@ -433,7 +433,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <p className="text-xs tracking-widest uppercase text-[#6366f1] mb-3 font-mono">
+            <p className="text-xs tracking-widest uppercase text-[#64ffda] mb-3 font-mono">
               // Let&apos;s connect
             </p>
             <h2 className="text-3xl font-bold text-[#e4e4e7]">Get In Touch</h2>
@@ -447,9 +447,9 @@ export default function Home() {
           >
             <a
               href="mailto:anasanzari@gmail.com"
-              className="flex items-center gap-4 p-5 rounded-2xl bg-[#12121a] border border-[#1e1e2e] hover:border-[#6366f1]/30 hover:bg-[#1a1a26] hover:-translate-y-1 transition-all"
+              className="flex items-center gap-4 p-5 rounded-2xl bg-[#12121a] border border-[#1e1e2e] hover:border-[#64ffda]/30 hover:bg-[#1a1a26] hover:-translate-y-1 transition-all"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#6366f1]/10 flex items-center justify-center text-lg">
+              <div className="w-10 h-10 rounded-xl bg-[#64ffda]/10 flex items-center justify-center text-lg">
                 ✉️
               </div>
               <div>
@@ -463,9 +463,9 @@ export default function Home() {
               href="https://github.com/anasanzari"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-5 rounded-2xl bg-[#12121a] border border-[#1e1e2e] hover:border-[#6366f1]/30 hover:bg-[#1a1a26] hover:-translate-y-1 transition-all"
+              className="flex items-center gap-4 p-5 rounded-2xl bg-[#12121a] border border-[#1e1e2e] hover:border-[#64ffda]/30 hover:bg-[#1a1a26] hover:-translate-y-1 transition-all"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#6366f1]/10 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-[#64ffda]/10 flex items-center justify-center">
                 <svg
                   width="20"
                   height="20"
