@@ -22,6 +22,7 @@ import {
   SiElasticsearch,
   SiApachecassandra,
   SiFirebase,
+  SiPython,
 } from "react-icons/si";
 import { FaJava, FaAws } from "react-icons/fa";
 
@@ -48,6 +49,7 @@ const skillIcons: Record<string, IconType> = {
   Elasticsearch: SiElasticsearch,
   Cassandra: SiApachecassandra,
   Firestore: SiFirebase,
+  Python: SiPython,
 };
 
 const staggerContainer = {
@@ -72,7 +74,7 @@ const TypewriterText = ({ text }: { text: string }) => {
 };
 
 const skills = {
-  Languages: ["Golang", "TypeScript", "Node.js", "Java"],
+  Languages: ["Golang", "TypeScript", "Node.js", "Python", "Java"],
   "Frameworks": ["Gin", "NestJS", "Next.js", "React", "React Native", "Express"],
   "Cloud & DevOps": ["AWS", "GCP", "Docker", "Kubernetes", "Terraform", "GitHub Actions"],
   Databases: ["MySQL", "Postgres", "MongoDB", "Elasticsearch", "Cassandra", "Firestore"],
@@ -107,7 +109,7 @@ const experiences = [
       "Developed Tradeling Wallet — enabling refunds directly to wallet and apply to new purchases",
       "Built automated refund workflows and internal credit application assessment system",
     ],
-    tech: ["Node.js", "TypeScript", "NestJS", "Golang", "MongoDB", "Postgres", "React", "Next.js"],
+    tech: ["Node.js", "TypeScript", "NestJS", "Golang", "MongoDB", "Postgres", "React", "Next.js", "Flutter"],
   },
   {
     title: "Senior Software Engineer",
@@ -120,7 +122,7 @@ const experiences = [
       "Architected the full stack for a fleet tracking and monitoring system, supporting 1,000+ connected devices",
       "Developed the Fleet Manager mobile app with live bidding and logistics tracking",
     ],
-    tech: ["Node.js", "MongoDB", "Firebase", "Socket.io", "React Native"],
+    tech: ["Node.js", "MongoDB", "Firebase", "Socket.io", "React Native", "Erpnext"],
   },
   {
     title: "Software Engineer",
@@ -259,19 +261,19 @@ export default function Home() {
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <p className="text-xs tracking-widest uppercase text-[#64ffda] mb-3 font-mono">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <p className="text-xs tracking-widest uppercase text-[#64ffda] mb-3 font-mono">
               // What I work with
-            </p>
-            <h2 className="text-3xl font-bold text-[#e4e4e7]">
-              Technical Skills
-            </h2>
-          </motion.div>
+              </p>
+              <h2 className="text-3xl font-bold text-[#e4e4e7]">
+                Technical Skills
+              </h2>
+            </motion.div>
           </div>
 
           <motion.div
